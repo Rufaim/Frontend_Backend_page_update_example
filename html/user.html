@@ -1,0 +1,20 @@
+{{with index .Results 0}}
+<div id="img-box" class="dot {{.Gender}}" title="{{.Name.First}} {{.Name.Last}}">
+    <img id="picture-url" src="{{.Picture.URL}}" alt="{{.Name.First}} {{.Name.Last}}" />
+</div>
+<h1 id="name-string">{{.Name.First}} {{.Name.Last}}</h1>
+<div class="text-left">
+	<h3>Email: <span id="email-string">{{.Email}}</span></h3>
+	<h3>Phone: <span id="phone-string">{{.Phone}}</span></h3>
+</div>
+<a class="button {{.Gender}}" href="javascript:updateUserBackend()">Get Random User<br/><span>(backend)</span></a>
+<a class="button {{.Gender}}" href="javascript:updateUserFrontend()">Get Random User<br/><span>(frontend)</span></a>
+{{end}}
+
+<div class="centered">
+    <p>User is generated with <a href="https://randomuser.me"> RandomUser Api</a></p>
+    <div class="text-left">
+        Seed: <span id="seed-string">{{.Info.Seed}}</span><br/>
+        Api version: <span id="api-version-string">{{.Info.Version}}</span>
+    </div>
+</div>
